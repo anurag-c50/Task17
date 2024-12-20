@@ -1,0 +1,49 @@
+const mongoose = require("mongoose")
+const Schema=new mongoose.Schema({
+    name:{
+        type:String,
+        require:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    userType:{
+        type:String,
+        required:true
+    },
+    UserPersonalDetails:{
+        Address1:{
+            type:String,
+            required:true
+        },Address2:{
+            type:String,
+            required:false
+        },
+        City:{
+            type:String,
+            required:true
+        },
+        State:{
+            type:String,
+            required:true
+        },
+        ZipCode:{
+            type:Number,
+            required:true
+        },
+
+    },
+    tokens:[{
+        token:{
+            type:String,
+            required:true
+        }
+    }]
+})
+const User=mongoose.model("User",Schema)
+module.exports=User

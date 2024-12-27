@@ -18,17 +18,19 @@ const Schema=new mongoose.Schema({
     },
     Phoneno:{
         type:Number,
-        required:false
+        required:false,
+        default:null
     },
     UserPic:{
         type:String,
-        required:false
+        required:false,
+        default:""
     },
     userType:{
         type:String,
         required:true
     },
-    UserPersonalDetails:{
+    UserPersonalDetails:[{
         Address1:{
             type:String,
             required:true
@@ -49,7 +51,7 @@ const Schema=new mongoose.Schema({
             required:true
         },
 
-    },
+    }],
     tokens:[{
         token:{
             type:String,
